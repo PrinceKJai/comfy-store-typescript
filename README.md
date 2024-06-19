@@ -397,6 +397,7 @@ const router = createBrowserRouter([
 
     children: [
       {
+        //setting the index true here means this is the entrypoint component for the route
         index: true,
         element: <Landing />,
       },
