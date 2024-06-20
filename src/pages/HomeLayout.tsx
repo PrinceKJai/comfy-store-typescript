@@ -4,7 +4,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 
 const HomeLayout = () => {
   const navigation = useNavigation();
-  console.log("navigation", navigation);
+  // console.log("navigation", navigation);
 
   const isLoading = navigation.state === "loading";
 
