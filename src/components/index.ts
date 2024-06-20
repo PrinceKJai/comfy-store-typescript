@@ -14,3 +14,5 @@ export { default as Filters } from './Filters';
 export { default as ProductsContainer } from './ProductsContainer';
 export { default as PaginationContainer } from './PaginationContainer';
 export { default as ProductsList } from './ProductsList';
+export { default as FormInput } from './FormInput';
+export { default as FormSelect } from './FormSelect';
