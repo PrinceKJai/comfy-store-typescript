@@ -12,7 +12,7 @@ export const loader: LoaderFunction = async () : Promise<ProductsResponse> => {
 
 function Landing() {
   const data = useLoaderData() as ProductsResponse;
-  console.log("data", data);
+  // console.log("data", data);
   return (
     <>
       <Hero />
