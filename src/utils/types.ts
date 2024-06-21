@@ -44,4 +44,9 @@ export type Params = {
   page?: number;
 };
 
+export type SingleProductResponse = {
+  data: Product;
+  meta: {};
+};
+
 export type ProductsResponseWithParams = ProductsResponse & { params: Params };

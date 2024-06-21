@@ -16,3 +16,5 @@ export { default as PaginationContainer } from './PaginationContainer';
 export { default as ProductsList } from './ProductsList';
 export { default as FormInput } from './FormInput';
 export { default as FormSelect } from './FormSelect';
+export { default as SelectProductAmount } from './SelectProductAmount';
+export { default as SelectProductColor } from './SelectProductColor';
