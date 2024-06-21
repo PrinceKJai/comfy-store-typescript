@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { ProductsResponseWithParams } from "@/utils";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
+import FormRange from "./FormRange";
+import FormCheckbox from "./FormCheckbox";
 
 function Filters() {
   const { meta, params } = useLoaderData() as ProductsResponseWithParams;
@@ -37,6 +39,10 @@ function Filters() {
         label="order by"
         options={["a-z", "z-a", "high", "low"]}
       />
+      {/* PRICE */}
+      <FormRange label='price' name='price' defaultValue={price} />
+      {/* SHIPPING */}
+      <FormCheckbox label='free shipping' name='shipping' defaultValue={shipping} />
       <Button type="submit" size="sm" className="self-end mb-2">
         search
       </Button>
