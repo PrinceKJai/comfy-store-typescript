@@ -18,3 +18,5 @@ export { default as FormInput } from './FormInput';
 export { default as FormSelect } from './FormSelect';
 export { default as SelectProductAmount } from './SelectProductAmount';
 export { default as SelectProductColor } from './SelectProductColor';
+export { default as CartItemsList } from './CartItemsList';
+export { default as CartTotals } from './CartTotals';
