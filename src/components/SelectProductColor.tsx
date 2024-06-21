@@ -9,7 +9,6 @@ export default function SelectProductColor({
   productColor,
   setProductColor,
 }: SelectProductColorProps) {
-  console.log("first", colors, productColor);
   return (
     <div className="mt-6">
       <h4 className="text-md font-medium tracking-wider capitalize">colors</h4>
