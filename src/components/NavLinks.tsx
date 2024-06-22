@@ -9,7 +9,6 @@ function NavLinks() {
       {links.map((link) => {
         const restrictedRoutes =
           link.href === "checkout" || link.href === "orders";
-        console.log("restrictedRoutes", restrictedRoutes);
         if (restrictedRoutes && !user) return null;
         return (
           <NavLink
