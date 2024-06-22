@@ -16,6 +16,8 @@ import ErrorElement from "./components/ErrorElement";
 import { loader as LandingLoader } from "./pages/Landing";
 import { loader as ProductsLoader } from "./pages/Products";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
+//Action from react-router-dom
+import { action as RegisterAction } from "./pages/Register";
 
 function App() {
   const router = createBrowserRouter([
@@ -69,6 +71,7 @@ function App() {
       path: "/register",
       element: <Register />,
       errorElement: <Error />,
+      action: RegisterAction
     },
   ]);
   return <RouterProvider router={router} />;
