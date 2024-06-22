@@ -18,6 +18,8 @@ import { loader as ProductsLoader } from "./pages/Products";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
 //Action from react-router-dom
 import { action as RegisterAction } from "./pages/Register";
+import { action as loginAction } from "./pages/Login";
+import { store } from "./store";
 
 function App() {
   const router = createBrowserRouter([
@@ -66,6 +68,7 @@ function App() {
       path: "/login",
       element: <Login />,
       errorElement: <Error />,
+      action: loginAction(store)
     },
     {
       path: "/register",

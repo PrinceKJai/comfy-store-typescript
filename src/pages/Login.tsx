@@ -4,7 +4,6 @@ import {
   redirect,
   type ActionFunction,
   useNavigate,
-  Navigate,
 } from "react-router-dom";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,25 @@ import { toast } from "@/components/ui/use-toast";
 import { type ReduxStore } from "@/store";
 import { loginUser } from "@/features/user/userSlice";
 import { useAppDispatch } from "@/hooks";
-import { AxiosResponse } from "axios";
+
+export const action =
+  (store: ReduxStore): ActionFunction =>
+  async ({ request }): Promise<Response | null> => {
+    try {
+      const formData = await request.formData();
+      const data = Object.fromEntries(formData);
+      const response = await customFetch.post("/auth/local", data);
+      console.log("first", response);
+      const username = response.data.user.username;
+      const jwt = response.data.jwt;
+      store.dispatch(loginUser({ username, jwt }));
+      return redirect("/");
+    } catch (error) {
+      console.log(error);
+      toast({ description: "Login failed" });
+      return null;
+    }
+  };
 
 function Login() {
   const dispatch = useAppDispatch();
@@ -27,10 +44,13 @@ function Login() {
       });
       console.log("response", response);
       const {
-        data: { jwt, user: { username } },
+        data: {
+          jwt,
+          user: { username },
+        },
       } = response;
       console.log("user", jwt, username);
-      dispatch(loginUser({ jwt, username}));
+      dispatch(loginUser({ jwt, username }));
       navigate("/");
     } catch (error) {
       console.log(error);
