@@ -16,6 +16,7 @@ import ErrorElement from "./components/ErrorElement";
 import { loader as LandingLoader } from "./pages/Landing";
 import { loader as ProductsLoader } from "./pages/Products";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
+import { loader as CheckoutLoader } from "./pages/Checkout";
 //Action from react-router-dom
 import { action as RegisterAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
@@ -56,6 +57,7 @@ function App() {
           path: "checkout",
           element: <Checkout />,
           errorElement: <ErrorElement />,
+          loader: CheckoutLoader(store)
         },
         {
           path: "orders",
